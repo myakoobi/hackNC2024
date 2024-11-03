@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TotalInterestCalculator from './interest';
 
 export default function Tvm() {
   // State for inputs
@@ -56,16 +57,16 @@ export default function Tvm() {
           onChange={(e) => setPv(parseFloat(e.target.value))}
         />
       </label>
-      <br />
-      <label>
+
+      {/* <label>
         Future Value (FV):
         <input
           type="number"
           value={fv}
           onChange={(e) => setFv(parseFloat(e.target.value))}
         />
-      </label>
-      <br />
+      </label> */}
+      <br/>
       <label>
         Time (Years):
         <input
@@ -88,9 +89,10 @@ export default function Tvm() {
 
       <h2>Results</h2>
       <p>Future Value: {results.futureValue}</p>
-      <p>Present Value: {results.presentValue}</p>
+      {/* <p>Present Value: {results.presentValue}</p> */}
       <p>Payment Amount: {results.payment}</p>
       {/* <p>Total interest: {futureValue-presentValue} </p> */}
+      <TotalInterestCalculator/>
     </div>
   );
 }

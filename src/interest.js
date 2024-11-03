@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-
+import React, { useState } from 'react' 
 export default function TotalInterestCalculator() {
     const [interestRate, setInterestRate] = useState(0);
     const [presentValue, setPresentValue] = useState(0);
