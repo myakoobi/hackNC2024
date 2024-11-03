@@ -22,6 +22,7 @@ const App = () => {
     const loan = parseFloat(loanAmount);
     const rate = parseFloat(interestRate)/100/12 ; 
     const months = 12;
+    
     if (isNaN(loan)|| loan <= 0 || isNaN(rate) || rate <=0){
       setMonthlyPayment("Please enter valid numbers!");
       return; 
