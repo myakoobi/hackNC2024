@@ -12,8 +12,8 @@ export default function Login({ onLogin }) {
     if (name  && email ) {
       alert("You have successfully logged in.");
       onLogin(name, email);
-      window.location.reload();
-    } else {
+    }
+     else {
       setError(true);
     }
   };
