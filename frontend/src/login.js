@@ -1,17 +1,17 @@
 
 import React, { useState } from "react";
 
-export default function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+export default function Login({ onLogin }) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [error, setError] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    if (username === "user" && password === "web_dev") {
+    if (name  && email ) {
       alert("You have successfully logged in.");
-      onLogin(username, "user@soemthing.com");
+      onLogin(name, email);
       window.location.reload();
     } else {
       setError(true);
@@ -22,19 +22,19 @@ export default function Login() {
     <div>
       <form id="login-form" onSubmit={handleLogin}>
         <div>
-          <label>Username:</label>
+          <label>Name:</label>
           <input
             type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div>
-          <label>Password:</label>
+          <label>Email:</label>
           <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <button type="submit" id="login-form-submit">Login</button>
