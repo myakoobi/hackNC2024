@@ -21,7 +21,7 @@ const App = () => {
   const calculatePayments = () => {
     const loan = parseFloat(loanAmount);
     const rate = parseFloat(interestRate)/100/12 ; 
-    if (!loan || !rate){
+    if (isNaN(loan)|| loan <= 0 || isNaN(rate) || rate <=0){
       setMonthlyPayment("Please enter valid numbers!");
       return; 
     }
@@ -38,10 +38,10 @@ const App = () => {
       ) : (
         <div>
           <h1 className='title'> Time Value Vault</h1> 
-          <p className='body'> Enter some information so we can get it calculated!</p>
-          <p className='body'> Enter your income: </p> <input type="number" id="income" name="income"></input>
-          <p className='body'> Enter the loan amount owed: </p> <input type="number" id="loan" name="loan" onChange={(e) => setLoanAmount(e.target.value)}></input>
-          <p className='body'> Enter your monthly expenses:</p> <input type="number" id="expenses" name="expenses" onChange={(e) => setExpenses(e.target.value)}></input>
+          <p className='body'> Enter some information so we can get it calculated! </p>
+          <p className='body'> Enter your income: </p> <input type="number" id="income" name="income"/>
+          <p className='body'> Enter the loan amount owed: </p> <input type="number" id="loan" name="loan" onChange={(e) => setLoanAmount(e.target.value)}/>
+          <p className='body'> Enter your monthly expenses:</p> <input type="number" id="expenses" name="expenses" onChange={(e) => setExpenses(e.target.value)}/>
           <button onClick={calculatePayments}>Calculate Payment</button>
           <h2 className='result' id="paymentResult">{"Result: " + monthlyPayment}</h2> {/* Display the result here */}
          <Tmv/>
