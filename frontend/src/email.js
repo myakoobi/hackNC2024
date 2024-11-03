@@ -1,11 +1,14 @@
 import emailjs from 'emailjs-com';
 
-export const sendEmail = (email, result) => {
+export const sendEmail = (email, income, loan, expenses, result) => {
     const templateParams = {
         to_email: email,
-        message: result
+        income: income,
+        loan: loan,
+        expenses: expenses,
+        result: result
     };
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams, 'YOUR_USER_ID')    
+    emailjs.send('service_uwu5vqo', 'template_jfsomuj', templateParams, 'EJq2SG52ZLjCP7P1i')    
         .then((response) => {
             console.log('SUCCESS!', response.status, response.text);
         })
