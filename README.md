@@ -38,6 +38,8 @@ Enter your loan amount, interest rate, and monthly expenses.
 
 Click on "Calculate Payment" to see the monthly payment result.
 
+on the side of the web paelge there is a chatbot which can answer questions regarding loan. 
+
 The result will be displayed on the screen and an email will be sent to the user with the calculation details.
 
 
